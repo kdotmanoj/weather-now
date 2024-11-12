@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { searchCities } from '../services/weatherService';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch , loading }) => {
   const [query, setQuery] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -15,7 +14,6 @@ const SearchBar = ({ onSearch }) => {
     
     if (!query.trim()) return; 
 
-    setLoading(true);
     try {
       const cities = await searchCities(query.trim());
       if (cities.length > 0) {
@@ -24,8 +22,6 @@ const SearchBar = ({ onSearch }) => {
       }
     } catch (error) {
       console.error('Failed to fetch cities:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

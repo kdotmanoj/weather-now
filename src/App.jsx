@@ -36,7 +36,7 @@ function App() {
           
           <div className="flex flex-col items-center">
             <div className="w-full max-w-md animate-fade-in">
-              <SearchBar onSearch={handleSearch} />
+              <SearchBar onSearch={handleSearch} loading={loading} />
             </div>
             
             <div className="w-full max-w-md z-0">
