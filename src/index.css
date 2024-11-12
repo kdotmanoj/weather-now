@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.weather-bg {
+  background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=2069&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.weather-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.temp-hot { color: #FF6B6B; }
+.temp-warm { color: #FFB067; }
+.temp-mild { color: #4ECDC4; }
+.temp-cool { color: #45B7D1; }
+.temp-cold { color: #A7D5ED; }
+.temp-freezing { color: #87CEEB; }
+
+.weather-card {
+  background: rgba(23, 25, 35, 0.8);
+}
