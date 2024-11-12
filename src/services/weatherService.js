@@ -20,7 +20,7 @@ export const searchCities = async (query) => {
 
     return response.data.results.map(city => ({
       name: city.name,
-      fullName: `${city.name}, ${city.country}${city.admin1 ? `, ${city.admin1}` : ''}`,
+      fullName: `${city.name}, ${city.country}`,
       latitude: city.latitude,
       longitude: city.longitude
     }));
